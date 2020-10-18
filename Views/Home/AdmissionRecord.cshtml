@@ -1,0 +1,48 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "AdmissionRecord";
+}
+
+<h2>Admission Record</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Fisrt Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Mobile Number</th>
+        <th>Date of Birth</th>
+        <th>Place of Birth</th>
+        <th>Gender</th>
+        <th>Religion</th>
+        <th>Nationality</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Street Address</th>
+        <th>Action</th>
+
+    </tr>
+    @for (int i = 0; i < Model.Rows.Count; i++) { 
+<tr>
+    <td>@Model.Rows[i][1]</td>
+    <td>@Model.Rows[i][2]</td>
+    <td>@Model.Rows[i][10]</td>
+    <td>@Model.Rows[i][8]</td>
+    <td>@Model.Rows[i][9]</td>
+    <td>@Model.Rows[i][3]</td>
+    <td>@Model.Rows[i][4]</td>
+    <td>@Model.Rows[i][5]</td>
+    <td>@Model.Rows[i][6]</td>
+    <td>@Model.Rows[i][7]</td>
+    <td>@Model.Rows[i][11]</td>
+    <td>@Model.Rows[i][12]</td>
+    <td>@Model.Rows[i][3]</td>
+    <td>@Model.Rows[i][14]</td>
+    <td><a href="@Url.Action("Edit","Home", new { @id = @Model.Rows[i][0]})">Edit</a>&nbsp;&nbsp;<a href="@Url.Action("Delete","Home", new { @id = @Model.Rows[i][0]})">Delete</a></td>
+</tr>
+    }
+
+
+</table>
+
